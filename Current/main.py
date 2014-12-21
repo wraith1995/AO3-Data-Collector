@@ -156,9 +156,9 @@ def warnings_List(soup1):
 
 def other_tags(soup1):
      """Gets the list of freeform tags from the workblob"""
-    temp1 = soup1.find_all('li','freeforms')
-    r = list_of_tags_to_string(temp1)
-    return(r)
+     temp1 = soup1.find_all('li','freeforms')
+     r = list_of_tags_to_string(temp1)
+     return(r)
 
 def relationship_list(soup1):
     """Gets the list of relationships from the workblob"""
@@ -225,7 +225,7 @@ def insertIndexes(a,b):
 def stats_unfolder(record):
     """Takes the list of stats in the record created from a workblob and formates it in a csv print ready way"""
     first = record[0:3]
-    first[0] = '\"' + first[0] + '\"' #This exists to deal with the possibility of commas being in titles... this might need to be generalized to fields not handed by csv transformations
+    #first[0] = '\"' + first[0] + '\"' #This exists to deal with the possibility of commas being in titles... this might need to be generalized to fields not handed by csv transformations
     inserts = record[3]
     inserts[1] = inserts[1].replace(',','') # -||-
     records = record[4]
@@ -254,6 +254,8 @@ def csv_sub_transform(record,a):
 def csv_transformer(record):
     """Mass applies csv transform to all indexes corresponding to lists, but the last index of the record."""
     for x in range(0,(len(record) -1)):
+        #if isinstance(record[x],basestring):
+            #record[x] = '\"' + record[x] + '\"'
         if isinstance(record[x],list):
             csv_sub_transform(record,x)
         else:
@@ -303,14 +305,21 @@ def csv_write(l):
     l_1 = []
     for x in range(0,len(l)):
         print(x)
-        l_1.append(str(l[x])) #Bugs... many bugs,.. because screw ASCII
+        if isinstance(l[x],int):
+            l[x] = str(l[x])
+        l_1.append((l[x].encode('utf-8')))
+        #print_line(l[x])
     return((','.join(l_1)) + '\n')
 
+def double_qoutes_fixer(record):
+    if (record[0].count('\"')) == 4:
+        record[0] = record[0][1:]
+        record[0] = record[0][:-1]
+    else:
+        pass
 
-
-
-def just_fucking_do_it(start_link):
-    """Requires some explenations"""
+def link_to_csv(start_link):
+    """Requires some explanations"""
     a = kick_start(start_link)
     b = mapf(a)
     print(len(b))
@@ -319,8 +328,9 @@ def just_fucking_do_it(start_link):
     for x in range(0,len(b)):
         b[x] = stats_unfolder(b[x])
         csv_transformer(b[x])
-        #print(len(b[x]))
         tags_to_colums(b[x],(len(b[x])-1),col)
+        b[x][0] = '\"' + b[x][0] + '\"'
+        double_qoutes_fixer(b[x])
         a = b[x].pop()
         b[x] = b[x] + a
         #print(len(b[x]))
@@ -335,5 +345,15 @@ def just_fucking_do_it(start_link):
     for x1 in range(0,len(b)):
         print('gag',x1)
         csv.write(csv_write(b[x1]))
+        #print(csv_write(b[x1]))
+        #print(b[x1])
     csv.close()
-just_fucking_do_it(start)
+
+def main():
+    link = input("Input the link to the first page of your archive of our own search (in qoutes):")
+    print(link)
+    link_to_csv(link)
+    print('Done!')
+
+main()
+#http://archiveofourown.org/works/search?utf8=%E2%9C%93&work_search[query]=&work_search[title]=&work_search[creator]=&work_search[revised_at]=&work_search[complete]=0&work_search[single_chapter]=0&work_search[word_count]=&work_search[language_id]=&work_search[fandom_names]=&work_search[rating_ids]=13&work_search[warning_ids][]=19&work_search[category_ids][]=116&work_search[character_names]=&work_search[relationship_names]=&work_search[freeform_names]=&work_search[hits]=&work_search[kudos_count]=&work_search[comments_count]=&work_search[bookmarks_count]=&work_search[sort_column]=&work_search[sort_direction]=&commit=Search
