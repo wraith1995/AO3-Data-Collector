@@ -4,8 +4,9 @@ import re
 import requests
 import itertools
 import io #might be used to deal with ASCII problem
+import sys
 
-
+sys.setrecursionlimit(1073741824)
 #Used for testing, to be replaced with IO system
 start = "http://archiveofourown.org/works/search?utf8=%E2%9C%93&work_search[query]=&work_search[title]=&work_search[creator]=&work_search[revised_at]=&work_search[complete]=0&work_search[single_chapter]=0&work_search[word_count]=&work_search[language_id]=&work_search[fandom_names]=Homestuck%2CHarry+Potter+-+J.+K.+Rowling&work_search[rating_ids]=&work_search[character_names]=&work_search[relationship_names]=&work_search[freeform_names]=&work_search[hits]=&work_search[kudos_count]=&work_search[comments_count]=&work_search[bookmarks_count]=&work_search[sort_column]=&work_search[sort_direction]=&commit=Search"
 start2 = "http://archiveofourown.org/works/search?commit=Search&page=4&utf8=%E2%9C%93&work_search[bookmarks_count]=&work_search[character_names]=&work_search[comments_count]=&work_search[complete]=0&work_search[creator]=&work_search[fandom_names]=Homestuck%2CHarry+Potter+-+J.+K.+Rowling&work_search[freeform_names]=&work_search[hits]=&work_search[kudos_count]=&work_search[language_id]=&work_search[query]=&work_search[rating_ids]=&work_search[relationship_names]=&work_search[revised_at]=&work_search[show_restricted]=false&work_search[single_chapter]=0&work_search[sort_column]=&work_search[sort_direction]=&work_search[title]=&work_search[word_count]="
@@ -282,7 +283,7 @@ def col_collection(records):
     for x in range(1,len(records)):
         z1 = len(records[x]) -1
         a = a + records[x][z1]
-    return(nub(a))
+    return(list(set(a))) #list/set/
 
 
 def tags_to_colums(data,x,col):
@@ -304,7 +305,7 @@ def csv_write(l):
     #l_1= map(str,l)
     l_1 = []
     for x in range(0,len(l)):
-        print(x)
+        #print(x)
         if isinstance(l[x],int):
             l[x] = str(l[x])
         l_1.append((l[x].encode('utf-8')))
@@ -322,8 +323,9 @@ def link_to_csv(start_link):
     """Requires some explanations"""
     a = kick_start(start_link)
     b = mapf(a)
-    print(len(b))
+    #print(len(b))
     col = col_collection(b) #rewrite to go for the last one... also... fucking hell can we figure out what is going on in stats (again???)
+    print('Coled!')
    # print(b[6])
     for x in range(0,len(b)):
         b[x] = stats_unfolder(b[x])
@@ -333,7 +335,7 @@ def link_to_csv(start_link):
         double_qoutes_fixer(b[x])
         a = b[x].pop()
         b[x] = b[x] + a
-        #print(len(b[x]))
+        print(x)
     title = left_title + standard_stat + middle_title + col
     #print(len(title))
     #print(csv_write(b[0]))
