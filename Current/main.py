@@ -82,9 +82,12 @@ def merger(ll):
 def kick_start(link1):
     """Given a search link, returns ALL of the work blobs for all pages of the search"""
     soup1 = link_to_soup(link1)
+    print("We have all the links")
     soups = get_all_soups(soup1)
+    print("We have all the soups")
     newsoups = []
     for x in range(0,len(soups)):
+        print(x)
         newsoups.append(get_work_blobs(locationGet(soups[x])))
     blag = merger(newsoups)
     return (blag)
@@ -228,7 +231,10 @@ def stats_unfolder(record):
     first = record[0:3]
     #first[0] = '\"' + first[0] + '\"' #This exists to deal with the possibility of commas being in titles... this might need to be generalized to fields not handed by csv transformations
     inserts = record[3]
-    inserts[1] = inserts[1].replace(',','') # -||-
+    if (isinstance(inserts[1],basestring)):
+        inserts[1] = inserts[1].replace(',','') # -||-
+    else:
+        pass
     records = record[4]
     last = record[5:]
     if (len(record) ==  len(standard_stat)):
@@ -281,6 +287,7 @@ def col_collection(records):
     a = records[0][z]
     #rewrite!
     for x in range(1,len(records)):
+        print(x)
         z1 = len(records[x]) -1
         a = a + records[x][z1]
     return(list(set(a))) #list/set/
