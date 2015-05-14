@@ -1,0 +1,1762 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"f2edcff25e","applicationID":"190034","transactionName":"dgwMEkpfWVsHERpFWUcIEUlLVVRFAQs=","queueTime":1,"applicationTime":163,"agentToken":null,"agent":"js-agent.newrelic.com/nr-632.min.js","ttGuid":"ec02946d42daab05"}</script>
+<script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VQcCWV9RGwIJVFFRAw=="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),u=c.length,f=i(a,o,r),d=0;u>d;d++)c[d].apply(f,n);return f}function a(t,e){u[t]=s(t).concat(e)}function s(t){return u[t]||[]}function c(){return n(e)}var u={};return{on:a,emit:e,create:c,listeners:s,_events:u}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:20,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(u){try{r("ierr",[u,(new Date).getTime(),!0])}catch(f){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(3),window.onerror=e;try{throw new Error}catch(u){"stack"in u&&(t(4),t(5),"addEventListener"in window&&t(1),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(2),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:5,2:8,3:3,4:7,5:6,6:21,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=(t(1),t("ee").create()),i=t(2)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:21,2:22,ee:"QJf3ax",gos:"7eSDFh"}],6:[function(t,e){var n=(t(2),t("ee").create()),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:22,2:21,ee:"QJf3ax"}],7:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=(t(2),t("ee").create()),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:22,2:21,ee:"QJf3ax"}],8:[function(t,e){function n(){u.inPlace(this,p,"fn-")}function r(t,e){u.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),u=c(a),f=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),f.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,u.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:5,2:22,ee:"QJf3ax"}],9:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,u="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,f=n(u);if(f&&(r.rxSize=f),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,u=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var u=n(o);u&&(r.txSize=u)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var f=0;c>f;f++)e.addEventListener(s[f],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+u(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:10,3:8,4:5,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],10:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],11:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:20,2:21,handle:"D5DuLP"}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===f.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=u.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===u.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=(t(2),window),u=c.document,f=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-632.min.js"},p=e.exports={offset:i(),origin:f,features:{}};u.addEventListener?(u.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(u.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:20,2:11,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],20:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],21:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],22:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,u;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){f([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return u=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,u],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,u(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,u="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,u?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){f([o,e,n,r])}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){f([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function f(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:21,ee:"QJf3ax"}]},{},["G9z0Bl",4,9]);</script>
+    <meta name="keywords" content="fanfiction, transformative works, otw, fair use, archive"/>
+    <meta name="language" content="en-US"/>
+    <meta name="subject" content="fandom"/>
+    <meta name="description" content="An Archive of Our Own, a project of the
+    Organization for Transformative Works"/>
+    <meta name="distribution" content="GLOBAL"/>
+    <meta name="classification" content="transformative works"/>
+    <meta name="author" content="Organization for Transformative Works"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+    <title>
+          Search Works
+        |
+        Archive of Our Own
+    </title>
+
+        <link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/A.1_site_screen_.css.pagespeed.cf.kC5A2kqFP3.css"/>
+<link rel="stylesheet" type="text/css" media="only screen and (max-width: 640px), handheld" href="/stylesheets/skins/skin_873_archive_2_0/A.4_site_maxwidth.handheld_.css.pagespeed.cf.iYVqUzE1Oa.css"/>
+<link rel="stylesheet" type="text/css" media="speech" href="/stylesheets/skins/skin_873_archive_2_0/A.5_site_speech_.css.pagespeed.cf.Ybb8bLK5Um.css"/>
+<link rel="stylesheet" type="text/css" media="print" href="/stylesheets/skins/skin_873_archive_2_0/A.6_site_print_.css.pagespeed.cf.ry3YZtf8Cz.css"/>
+<!--[if IE 8]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/7_site_screen_IE8_or_lower.css" /><![endif]-->
+<!--[if IE 5]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/8_site_screen_IE5.css" /><![endif]-->
+<!--[if IE 6]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/9_site_screen_IE6.css" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" type="text/css" media="screen" href="/stylesheets/skins/skin_873_archive_2_0/10_site_screen_IE7.css" /><![endif]-->
+
+
+<!--sandbox for developers	-->
+<style media="screen">.edit_external_author ul ul{margin-left:2.75em}</style>
+<script src="/javascripts/livevalidation_standalone.js,q1431362117.pagespeed.jm.Uoo3pUt-dG.js" type="text/javascript"></script>
+
+<meta content="authenticity_token" name="csrf-param"/>
+<meta content="w+3C6kce6M08sNpyjWmOnAiFnys1W7u8NgoH1l7Qn/I=" name="csrf-token"/>
+
+            <script>window.PHRASE_CONFIG={autoLowercase:false}</script>
+        
+
+
+  </head>
+
+  <body class="logged-out">
+    <div id="outer" class="wrapper">
+      <ul id="skiplinks"><li><a href="#main">Main Content</a></li></ul>
+      <!-- BEGIN BETA CAVEATS! -->
+<noscript>
+  <p id="javascript-warning">
+    While we&#x27;ve done our best to make the core functionality of this site accessible without javascript, it will work better with it enabled. Please consider turning it on!
+  </p>
+</noscript>
+<!-- END BETA CAVEATS! --> 
+
+<!-- BEGIN header -->
+
+<div id="header" class="region">
+
+  <h1 class="heading">
+    <a href="/"><span>Archive of Our Own</span><sup> beta</sup><img alt="AO3 logo - the letters A O 3 combined with arms raised in celebration, symbolizing the joy of fannish creation in the Archive" class="logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAD0AAAAqCAMAAAA3b6P4AAACslBMVEWXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACXAACpit0XAAAA5XRSTlMAAQIDBAUGBwgJCgsMDQ4PEBESFBUWFxgZGhscHR4fICEiIyQlJygpKissLi8wMTM0NTY3ODk6Ozw9PkBBQkNFR0hJSktMTU5PUFFSVFVWV1hZWltcXV5fY2RlZmhpamtsbW5vcHFyc3V2d3p7fX5/gIGCg4SFhoeIiouMjY6PkJGSlJWWl5iZmpucnZ6foKGipKWnqKmrrK2ur7CxsrO0tba3uLm6u7y9vr/AwsPFxsfIycrLzM7P0NLT1NXW19na29zd3t/g4eLj5OXm5+jp6uvs7e7v8PHy8/T19vf4+fr7/P3+b1plRQAABBRJREFUSMedlvtb1FUQxgcEBMtQggUCxVACu1ApYmRmUqESkCkUREaS4h3JCDONEFPBoBQCJcDIGxkGKYGBkgGSAq4BARIXWWA//0c/7J39LvY0P82cd97nzJlzZuaIKvBRmVqmP/XOrrQNIbOVsNfyjq/3nYrs/1GlWjPe90v28wrgnOiDP7ddeN9WAE47O9DLQI6PksfDMWVjnfuDlCC3b4HbpYcOFjUC9UHKWywtQZNpjTmdgu60uSIis979HRr8bIT4YjVDqV6TFlPgVqjxjBegyM4MfSPepDsm9tAcb5mwHnpfMJmq39C+ZLQCytrfM3deUAylwWYL2+BTc4eICU4aNk/pLgm0DNQuqY+/Nk8zmuX0PmFx83V0eIiIyOPlmq3Wpw+tg1OG7Lk1c8YSzmZsqYhIhLp7pVLy3AugLUqnz73L15boHogUke1cW6ic+5n7QJvhLCLic4cTlmAGRIhdFhfdlcmPpUjCfSj3FpEZ9dQ5W6CFDPrLIc652rj2FWUi0f1wdZGI5DERbg56dlIvO6hyt1UTe8pEZKUa1JEiMVBhDu6GzbHc8LFZUSXHRUTC/oShBHG5DKkmbPUg1xPujSyxSba/sltEREJuA9tl0Qikz9JD8f1ovrjOVtvF7NexRqcsVgOfSIIW6pMDVe7z3zwLHDjFeSfb7GV/P6fXwrqATInuAvraWruB0U2bx4aenqKRJA/MMairhoAsCczr1TWH8dPLfO7w2VRtqKDZFFjsOHBY5JmNX549dzQ5ROQkLY9MQbZvKDCzNgHkGCvaLRGOznS2zQ6e2GJu7gXY7/3kiqQj52ubbo9C143asm2hLsrsD3jV8l2PAbcGsBRN9VuK7B+Gvc3N+WnDKEuqAtlz8FdT37J/5dhdk3vbxUb4Y23UusT08nZAobyTSDeoD8VUmKja3DCVcylk6LB5J7Qcts54Ncv13PVXDMQWLfC9o4SOMxqmd/TqocSKvZirTiIiTusM3NbM5aq9AGccPoYaB73jwn/ItWJ/xQ4RkTWVOupg4VqViEw7ApBTA5l6P9/T8LrV1veHA0RCirQANKU/q193KdZHEiUiMjc2vxUO2E9ml5MlXhn9ANRsVJmAWdUAjAaLiKoRaN9pRX6bdv9VjQD8FGv5HgNuAjS5ioj3Hd3jnyS+7RQfA+BSpONkMFwD5OvOVzEClZNmuV0hE/cAqqOmK7yjD4ENen1Jhpo+y6xt1SXmWoKNEtzS8qOn0Zi3jw7z1hg+BNCZ5m2z/DxmmFuZ7DKbATeBsYKgKX8/C6JNehjfmEZ3DlAb8YC/k1dVlrHx5LHaNNZ7GElzlQdJwOXaOA8REb9sSh2Myw5xn78s/0Fmpzc0V+TmVY1y2lP+h3jF5l9qvPpdnP4I/wITXDY67Xw1sAAAAABJRU5ErkJggg=="/></a> 
+  </h1>
+
+    <div id="login" class="dropdown">
+      <p class="user actions" role="menu">
+        <a href="/user_sessions/new">Log In</a>
+      </p>
+      <div id="small_login" class="simple login">
+	<form accept-charset="UTF-8" action="/user_sessions" class="new_user_session" id="new_user_session" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"/><input name="authenticity_token" type="hidden" value="w+3C6kce6M08sNpyjWmOnAiFnys1W7u8NgoH1l7Qn/I="/></div>
+	<dl>
+    <dt><label for="user_session_login">User name:</label></dt>
+    <dd><input class="text" id="user_session_login" name="user_session[login]" type="text"/></dd>
+    <dt><label for="user_session_password">Password:</label></dt>
+    <dd><input class="text" id="user_session_password" name="user_session[password]" type="password"/></dd>
+  </dl>
+  <p class="submit actions">
+    <label for="user_session_remember_me" class="action"><input id="user_session_remember_me" name="user_session[remember_me]" type="checkbox" value="1"/>Remember Me</label>
+    <input name="commit" type="submit" value="Log In"/>
+  </p>    
+</form>
+<ul class="footnote actions">
+  <li><a href="/passwords/new">Forgot password?</a></li>
+    <li>
+      <a href="/invite_requests">Get an Invitation</a>
+    </li>
+</ul>
+
+</div>
+
+    </div>
+
+  <h3 class="landmark heading">Site Navigation</h3>
+  <ul class="primary navigation actions" role="navigation">
+    <li class="dropdown">
+      <a href="/menu/fandoms">Fandoms</a>
+      <ul class="menu" role="menu">
+  <li><a href="/media">All Fandoms</a></li>
+      <li id="medium_5"><a href="/media/Anime%20*a*%20Manga/fandoms">Anime &amp; Manga</a></li>
+      <li id="medium_3"><a href="/media/Books%20*a*%20Literature/fandoms">Books &amp; Literature</a></li>
+      <li id="medium_4"><a href="/media/Cartoons%20*a*%20Comics%20*a*%20Graphic%20Novels/fandoms">Cartoons &amp; Comics &amp; Graphic Novels</a></li>
+      <li id="medium_7"><a href="/media/Celebrities%20*a*%20Real%20People/fandoms">Celebrities &amp; Real People</a></li>
+      <li id="medium_2"><a href="/media/Movies/fandoms">Movies</a></li>
+      <li id="medium_6"><a href="/media/Music%20*a*%20Bands/fandoms">Music &amp; Bands</a></li>
+      <li id="medium_8"><a href="/media/Other%20Media/fandoms">Other Media</a></li>
+      <li id="medium_30198"><a href="/media/Theater/fandoms">Theater</a></li>
+      <li id="medium_1"><a href="/media/TV%20Shows/fandoms">TV Shows</a></li>
+      <li id="medium_476"><a href="/media/Video%20Games/fandoms">Video Games</a></li>
+      <li id="medium_9971"><a href="/media/Uncategorized%20Fandoms/fandoms">Uncategorized Fandoms</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/browse">Browse</a>
+      <ul class="menu" role="menu">
+  <li><a href="/works">Works</a></li>
+  <li><a href="/bookmarks">Bookmarks</a></li>
+  <li><a href="/tags">Tags</a></li>
+  <li><a href="/collections">Collections</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/search">Search</a>
+      <ul class="menu" role="menu">
+  <li><span class="current">Works</span></li>
+  <li><a href="/bookmarks/search">Bookmarks</a></li>
+  <li><a href="/tags/search">Tags</a></li>
+  <li><a href="/people/search">People</a></li>
+</ul>
+
+    </li>
+    <li class="dropdown">
+      <a href="/menu/about">About</a>
+      <ul class="menu" role="menu">
+  <li><a href="/about">About Us</a></li>
+  <li><a href="/admin_posts">News</a></li>
+  <li><a href="/faq">FAQ</a></li>
+  <li><a href="/wrangling_guidelines">Wrangling Guidelines</a></li>
+  <li><a href="/donate">Donate or Volunteer</a></li>
+</ul>
+
+    </li>
+	  <li class="search"><form accept-charset="UTF-8" action="/works/search" class="search" id="search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;"/></div>
+  <fieldset>
+    <legend>Search Works</legend>
+    <p>
+      <label class="landmark" for="site_search">Work Search:</label>
+      <input aria-describedby="site_search_tooltip" class="text" id="site_search" name="work_search[query]" type="text"/>
+      <span class="tip" role="tooltip" id="site_search_tooltip">tip: hetalia f/f sort:kudos</span>
+      <span class="submit actions"><input class="button" type="submit" value="Search"/></span>
+    </p>
+  </fieldset>
+</form></li>
+  </ul>
+
+
+
+  <div class="clear"></div>
+
+</div>
+
+
+
+<!-- END header -->
+
+      <div id="inner" class="wrapper">
+        <!-- BEGIN sidebar -->
+        <!-- END sidebar -->
+
+        <!-- BEGIN main -->
+        <div id="main" class="works-search region" role="main">
+          
+          <div class="flash"></div>
+          <!--Descriptive page names, messages and instructions-->
+<h2 class="heading">Search Results</h2>
+
+<h4 class="heading">
+  You searched for:
+  Tags: BDSM, Homestuck
+</h4>
+<!--/descriptions-->
+
+<!--subnav-->
+<ul class="navigation actions" role="navigation">
+  <li><a href="/works/search?commit=Search&amp;edit_search=true&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">Edit Your Search</a></li>
+</ul>
+<!--/subnav-->
+
+<!--main content-->
+  <h3 class="heading">1348 Found  <a href="/help/work-search-results-help.html" aria-controls="#modal" class="help symbol question modal" title="Work search results help"><span class="symbol question"><span>?</span></span></a></h3>
+
+  <h3 class="landmark heading">Works List</h3>
+  <ol class="work index group">
+        <li class="work blurb group" id="work_305598" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/305598">she has pretty much always been on to you</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/overthetiber/pseuds/overthetiber" class="login author" rel="author">overthetiber</a>
+
+
+  
+        for <a href="/users/kurosu/gifts">kurosu</a>
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-teen rating" title="Teen And Up Audiences"><span class="text">Teen And Up Audiences</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Underage"><span class="text">Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-femslash category" title="F/F"><span class="text">F/F</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">28 Dec 2011</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Aradia%20Megido*s*Vriska%20Serket/works" class="tag">Aradia Megido/Vriska Serket</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Aradia%20Megido/works" class="tag">Aradia Megido</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Vriska%20Serket/works" class="tag">Vriska Serket</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Dream%20Bubble/works" class="tag">Dream Bubble</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bloodplay/works" class="tag">Bloodplay</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Black%20Romance/works" class="tag">Black Romance</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>"So you’re sitting there, waiting (you don’t actually know for what), and all of a sudden she waltzes into your memory without so much as a warning.  She’s alive, after all!  Maid of Time and stuff!  She could have knocked or something.  You don’t know.  But there it is, the shift, the pop, whatever; and she’s standing above you."</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>1,346</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+    <dt>Collections:</dt>
+    <dd><a href="/works/305598/collections">1</a></dd>
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/305598?show_comments=true#comments">3</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/305598#comments">21</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/305598/bookmarks">1</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>506</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_556879" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/556879">Hook, Line, and Sinker</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/childishGambino/pseuds/adolescentGambino" class="login author" rel="author">adolescentGambino (childishGambino)</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Underage"><span class="text">Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-femslash category" title="F/F"><span class="text">F/F</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime"> 7 Nov 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Kanaya%20Maryam*s*Feferi%20Peixes/works" class="tag">Kanaya Maryam/Feferi Peixes</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Kanaya%20Maryam/works" class="tag">Kanaya Maryam</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Feferi%20Peixes/works" class="tag">Feferi Peixes</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Vriska%20Serket/works" class="tag">Vriska Serket</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Sollux%20Captor/works" class="tag">Sollux Captor</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Black%20Romance/works" class="tag">Black Romance</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Caliginous%20Romance%20%7C%20Kismesis/works" class="tag">Caliginous Romance | Kismesis</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bloodplay/works" class="tag">Bloodplay</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Rare%20Pairing/works" class="tag">Rare Pairing</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Herding%20Cats/works" class="tag">Herding Cats</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Fan%20Contribution/works" class="tag">Fan Contribution</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Fanfiction%20of%20a%20Fanfiction/works" class="tag">Fanfiction of a Fanfiction</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/FANFICCEPTION/works" class="tag">FANFICCEPTION</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/THE%20FANFIC%20IS%20COLLAPSING/works" class="tag">THE FANFIC IS COLLAPSING</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>After no longer being able to deny her true feelings, Kanaya prepares for her first hate date with Feferi. But the night doesn't go exactly as she planned...</p><p>(A Herding Cats fanwork)</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>2,406</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Kudos:</dt>
+    <dd><a href="/works/556879#comments">35</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/556879/bookmarks">2</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>798</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_990678" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/990678">Merciful</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/Ranshiinsitha/pseuds/Ranshiinsitha" class="login author" rel="author">Ranshiinsitha</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-general-audience rating" title="General Audiences"><span class="text">General Audiences</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-no warnings" title="No Archive Warnings Apply"><span class="text">No Archive Warnings Apply</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-multi category" title="Gen, F/M"><span class="text">Gen, F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime"> 5 Oct 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/No%20Archive%20Warnings%20Apply/works" class="tag">No Archive Warnings Apply</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/The%20Condesce*s*The%20Psiioniic/works" class="tag">The Condesce/The Psiioniic</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/The%20Condesce*s*The%20Helmsman/works" class="tag">The Condesce/The Helmsman</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Her%20Imperious%20Condescension%20-%20Character/works" class="tag">Her Imperious Condescension - Character</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/The%20Condesce/works" class="tag">The Condesce</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/The%20Psiioniic%20%7C%20The%20Helmsman/works" class="tag">The Psiioniic | The Helmsman</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Sadism/works" class="tag">Sadism</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Torture/works" class="tag">Torture</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Shitty%20twist/works" class="tag">Shitty twist</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>La Condesa gusta de mostrarle al Psiioniic que la vida a bordo de su barco no es tan mala como él la hace parecer, pero hasta que exento será cierto?</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>Español</dd>
+    <dt>Words:</dt>
+    <dd>2,694</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+
+    <dt>Hits:</dt>
+    <dd>110</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_800334" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/800334">War Wounds</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/Eyas/pseuds/Eyas" class="login author" rel="author">Eyas</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-notrated rating" title="Not Rated"><span class="text">Not Rated</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings"><span class="text">Choose Not To Use Archive Warnings</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-femslash category" title="F/F"><span class="text">F/F</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">12 May 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Rose%20Lalonde*s*Kanaya%20Maryam/works" class="tag">Rose Lalonde/Kanaya Maryam</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Rose%20Lalonde/works" class="tag">Rose Lalonde</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Kanaya%20Maryam/works" class="tag">Kanaya Maryam</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Vriska%20Serket/works" class="tag">Vriska Serket</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jade%20Harley/works" class="tag">Jade Harley</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Biting/works" class="tag">Biting</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Handcuffs/works" class="tag">Handcuffs</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Militarystuck/works" class="tag">Militarystuck</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Mild%20OOC%20will%20be%20corrected%20in%20future/works" class="tag">Mild OOC will be corrected in future</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>The eternal conflict of darkness and light has splintered, the stalemate broken and the two armies divided into four equal quarters, each with it’s own unique colour associated of course with it’s own Colonel. The Blue army, the green army, the violet army and the jade army. Each as strong and as deadly as the other.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>864</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/800334?show_comments=true#comments">2</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/800334#comments">8</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/800334/bookmarks">1</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>225</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_803686" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/803686">permission</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/littlestrideer/pseuds/littlestrideer" class="login author" rel="author">littlestrideer</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings"><span class="text">Choose Not To Use Archive Warnings</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-slash category" title="M/M"><span class="text">M/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">14 May 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Alpha%20Dave%20Strider*s*Dirk%20Strider/works" class="tag">Alpha Dave Strider/Dirk Strider</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Alpha%20Dave%20Strider/works" class="tag">Alpha Dave Strider</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Dirk%20Strider/works" class="tag">Dirk Strider</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Dom*s*sub/works" class="tag">Dom/sub</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/uhhhh%20stuff/works" class="tag">uhhhh stuff</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>dave does a thing and dirk doesn't like it.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>2,359</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Kudos:</dt>
+    <dd><a href="/works/803686#comments">18</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/803686/bookmarks">6</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>1090</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_924209" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/924209">So Will You Scatter My Ashes Where They Won't Be Found?</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/TheMutantHonk/pseuds/TheMutantHonk" class="login author" rel="author">TheMutantHonk</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings, No Archive Warnings Apply"><span class="text">Choose Not To Use Archive Warnings, No Archive Warnings Apply</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-het category" title="F/M"><span class="text">F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">13 Aug 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/No%20Archive%20Warnings%20Apply/works" class="tag">No Archive Warnings Apply</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Aradia%20Megido*s*Karkat%20Vantas/works" class="tag">Aradia Megido/Karkat Vantas</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Aradia%20Megido%20*a*%20Karkat%20Vantas/works" class="tag">Aradia Megido &amp; Karkat Vantas</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Aradia%20Megido/works" class="tag">Aradia Megido</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Karkat%20Vantas/works" class="tag">Karkat Vantas</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Sexual%20Content/works" class="tag">Sexual Content</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Xeno/works" class="tag">Xeno</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Alternia/works" class="tag">Alternia</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Not%20really%20sure%20how%20to%20tag%20this*d**d**d*/works" class="tag">Not really sure how to tag this...</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Light%20Bondage/works" class="tag">Light Bondage</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Blindfolds/works" class="tag">Blindfolds</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Calling all cars we've got another victim<br/>'Cause my love has become an affliction<br/>What did you expect from me?</p><p>Senses Fail - Calling All Cars</p>
+    </blockquote>
+  	
+    <h6 class="landmark heading">Series</h6>
+    <ul class="series">
+        <li>
+          Part <strong>1</strong> of <a href="/series/53865">Pass the Karkat, Please</a>
+        </li>
+    </ul>
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>672</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/924209?show_comments=true#comments">4</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/924209#comments">16</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/924209/bookmarks">1</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>853</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_2365577" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/2365577">You will Behave</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/letmeriddleyouatale/pseuds/letmeriddleyouatale" class="login author" rel="author">letmeriddleyouatale</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-explicit rating" title="Explicit"><span class="text">Explicit</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Graphic Depictions Of Violence, Underage"><span class="text">Graphic Depictions Of Violence, Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-slash category" title="M/M"><span class="text">M/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-no iswip" title="Work in Progress"><span class="text">Work in Progress</span></span></a></li>
+</ul>
+    <p class="datetime"> 2 Feb 2015</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Graphic%20Depictions%20Of%20Violence/works" class="tag">Graphic Depictions Of Violence</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Eridan%20Ampora*s*Sollux%20Captor/works" class="tag">Eridan Ampora/Sollux Captor</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Eridan%20Ampora/works" class="tag">Eridan Ampora</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Sollux%20Captor/works" class="tag">Sollux Captor</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Cronus%20Ampora/works" class="tag">Cronus Ampora</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/trading%20dominancy/works" class="tag">trading dominancy</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Humanstuck/works" class="tag">Humanstuck</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Mental%20Breakdown/works" class="tag">Mental Breakdown</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Mental%20Health%20Issues/works" class="tag">Mental Health Issues</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Smoking/works" class="tag">Smoking</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Cigarettes/works" class="tag">Cigarettes</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bondage/works" class="tag">Bondage</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/super%20out%20of%20character%20cronus/works" class="tag">super out of character cronus</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/ya%20know%20how%20it%20goes/works" class="tag">ya know how it goes</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Hate%20Sex/works" class="tag">Hate Sex</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Slapping/works" class="tag">Slapping</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Punching/works" class="tag">Punching</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/blood%20mention/works" class="tag">blood mention</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/taste%20of%20blood/works" class="tag">taste of blood</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Eridan never learned how to deal with people and now Sollux is going to teach Eridan how to behave better and help him work out the rough edges of his self absorbed personality.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>4,354</dd>
+    <dt>Chapters:</dt>
+    <dd>3/?</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/2365577?show_comments=true&amp;view_full_work=true#comments">5</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/2365577?view_full_work=true#comments">55</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/2365577/bookmarks">3</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>1106</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_312372" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/312372">The Sweet Taste of Revenge</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/MytzieLaelia/pseuds/MytzieLaelia" class="login author" rel="author">MytzieLaelia</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-explicit rating" title="Explicit"><span class="text">Explicit</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Graphic Depictions Of Violence"><span class="text">Graphic Depictions Of Violence</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-femslash category" title="F/F"><span class="text">F/F</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime"> 4 Jan 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Graphic%20Depictions%20Of%20Violence/works" class="tag">Graphic Depictions Of Violence</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Terezi%20Pyrope*s*Vriska%20Serket/works" class="tag">Terezi Pyrope/Vriska Serket</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Terezi%20Pyrope/works" class="tag">Terezi Pyrope</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Vriska%20Serket/works" class="tag">Vriska Serket</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Dubious%20Consent/works" class="tag">Dubious Consent</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Dream%20Bubble/works" class="tag">Dream Bubble</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Rough%20Sex/works" class="tag">Rough Sex</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bloodplay/works" class="tag">Bloodplay</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Cunnilingus/works" class="tag">Cunnilingus</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Terezi takes a nap hoping to find something more interesting to do but finds herself within her enemy's dream bubble. Needless to say, Terezi finds herself with more than she bargained for.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>2,816</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/312372?show_comments=true#comments">5</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/312372#comments">26</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/312372/bookmarks">4</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>1685</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_575937" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/575937">Attendant</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/orphan_account/pseuds/orphan_account" class="login author" rel="author">orphan_account</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings"><span class="text">Choose Not To Use Archive Warnings</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-multi category" title="Multi"><span class="text">Multi</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-no iswip" title="Work in Progress"><span class="text">Work in Progress</span></span></a></li>
+</ul>
+    <p class="datetime">30 Nov 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Cronus%20Ampora*s*Kankri%20Vantas/works" class="tag">Cronus Ampora/Kankri Vantas</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Cronus%20Ampora/works" class="tag">Cronus Ampora</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Kankri%20Vantas/works" class="tag">Kankri Vantas</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Meenah%20Peixes/works" class="tag">Meenah Peixes</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Doc%20Scratch/works" class="tag">Doc Scratch</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Humanstuck/works" class="tag">Humanstuck</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Pet%20Play/works" class="tag">Pet Play</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Dom*s*sub/works" class="tag">Dom/sub</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Sexual%20Slavery/works" class="tag">Sexual Slavery</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Cronus hates his job, so he does the 'smart' thing, and quits. Down on his luck, he meets Kankri Vantas, a millionaire inventor, in a coffee shop. Kankri offers him a position as his "personal attendant" - that is, to live with him at his estate and take care of his basic human urges, whether it be sexual ones or otherwise. Will Cronus perform well at his new career, or will he be thrown out like his last job?</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>4,156</dd>
+    <dt>Chapters:</dt>
+    <dd>3/?</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/575937?show_comments=true&amp;view_full_work=true#comments">13</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/575937?view_full_work=true#comments">80</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/575937/bookmarks">12</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>2238</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_611767" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/611767">Rose Lalonde &amp; The Queen of Spades</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/untimelyWatchman/pseuds/untimelyWatchman" class="login author" rel="author">untimelyWatchman</a>
+
+
+  
+        for <a href="/users/scrunch/gifts">scrunch</a>
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Graphic Depictions Of Violence"><span class="text">Graphic Depictions Of Violence</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-femslash category" title="F/F"><span class="text">F/F</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">28 Dec 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Graphic%20Depictions%20Of%20Violence/works" class="tag">Graphic Depictions Of Violence</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Rose%20Lalonde*s*Kanaya%20Maryam/works" class="tag">Rose Lalonde/Kanaya Maryam</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Kanaya%20Maryam*s*Vriska%20Serket/works" class="tag">Kanaya Maryam/Vriska Serket</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Let&#x27;s%20Not%20Spoil%20Everything/works" class="tag">Let&#x27;s Not Spoil Everything</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Or%20Am%20I%20Bluffing*q*/works" class="tag">Or Am I Bluffing?</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Rose%20Lalonde/works" class="tag">Rose Lalonde</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Kanaya%20Maryam/works" class="tag">Kanaya Maryam</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Terezi%20Pyrope/works" class="tag">Terezi Pyrope</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Vriska%20Serket/works" class="tag">Vriska Serket</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Equius%20Zahhak/works" class="tag">Equius Zahhak</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jack%20Noir/works" class="tag">Jack Noir</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Diamonds%20Droog/works" class="tag">Diamonds Droog</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Poker/works" class="tag">Poker</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Dystopian%20Space%20AU/works" class="tag">Dystopian Space AU</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Cycle%20of%20Revenge/works" class="tag">Cycle of Revenge</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Pretentious%20Chess%20Metaphors/works" class="tag">Pretentious Chess Metaphors</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Rose%E2%99%A0Everybody/works" class="tag">Rose♠Everybody</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/tw:%20Longfic/works" class="tag">tw: Longfic</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Mind%20Control/works" class="tag">Mind Control</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Light%20Bondage/works" class="tag">Light Bondage</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Rose Lalonde, freelance investigator and crime writer on S'burb station, finds that she can no longer escape the grimdarkness of her past, and is called upon to save the galaxy by playing cards and snarking at hot legislacerators, casino-operators, and space mafia princesses. Expect there to be high-stakes poker games at some point in the narrative provided that one is extremely patient</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>17,924</dd>
+    <dt>Chapters:</dt>
+    <dd>12/12</dd>
+
+
+    <dt>Collections:</dt>
+    <dd><a href="/works/611767/collections">1</a></dd>
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/611767?show_comments=true&amp;view_full_work=true#comments">4</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/611767?view_full_work=true#comments">25</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/611767/bookmarks">4</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>533</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_815314" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/815314">as you say</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/littlestrideer/pseuds/littlestrideer" class="login author" rel="author">littlestrideer</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-teen rating" title="Teen And Up Audiences"><span class="text">Teen And Up Audiences</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings"><span class="text">Choose Not To Use Archive Warnings</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-slash category" title="M/M"><span class="text">M/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">23 May 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Alpha%20Dave%20Strider*s*Dirk%20Strider/works" class="tag">Alpha Dave Strider/Dirk Strider</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Alpha%20Dave%20Strider/works" class="tag">Alpha Dave Strider</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Dirk%20Strider/works" class="tag">Dirk Strider</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/mentions%20of%20everyone%20else/works" class="tag">mentions of everyone else</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Dom*s*sub/works" class="tag">Dom/sub</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/dubcon/works" class="tag">dubcon</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/*q**q**q**q**q*/works" class="tag">?????</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/im%20not%20sure%20of%20anything%20bye/works" class="tag">im not sure of anything bye</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>you don't have much of a choice. it's your fault anyway.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>1,592</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/815314?show_comments=true#comments">2</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/815314#comments">18</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/815314/bookmarks">3</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>589</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_689149" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/689149">Ectoplasma, Ectoskeletal</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/dogtier/pseuds/dogtier" class="login author" rel="author">dogtier</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-explicit rating" title="Explicit"><span class="text">Explicit</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Underage, Graphic Depictions Of Violence"><span class="text">Underage, Graphic Depictions Of Violence</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-multi category" title="Multi"><span class="text">Multi</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">18 Feb 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Graphic%20Depictions%20Of%20Violence/works" class="tag">Graphic Depictions Of Violence</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Davesprite*s*John%20Egbert*s*Jade%20Harley/works" class="tag">Davesprite/John Egbert/Jade Harley</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Davesprite/works" class="tag">Davesprite</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/John%20Egbert/works" class="tag">John Egbert</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jade%20Harley/works" class="tag">Jade Harley</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Bloodplay/works" class="tag">Bloodplay</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Menstruation/works" class="tag">Menstruation</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Incest/works" class="tag">Incest</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Threesome/works" class="tag">Threesome</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Threesome%20-%20F*s*M*s*M/works" class="tag">Threesome - F/M/M</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Guro/works" class="tag">Guro</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Wound%20Play/works" class="tag">Wound Play</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>In which Davesprite learns to deal with his lack of junk with the assistance of one Jade Harley and the interference of one John Egbert. Contain several period jokes, entirely to many gay ones, incidents of gratuitous incest, and the usage of "sword hooha" in a sexual context.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>4,007</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/689149?show_comments=true#comments">9</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/689149#comments">41</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/689149/bookmarks">4</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>1093</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_397677" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/397677">Salty Dog</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/gardengnosdick/pseuds/gardengnosdick" class="login author" rel="author">gardengnosdick</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Choose Not To Use Archive Warnings, Rape/Non-Con, Underage"><span class="text">Choose Not To Use Archive Warnings, Rape/Non-Con, Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-het category" title="F/M"><span class="text">F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime"> 4 May 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Rape*s*Non-Con/works" class="tag">Rape/Non-Con</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Equius%20Zahhak*s*Jade%20Harley*q*/works" class="tag">Equius Zahhak/Jade Harley?</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Equius%20Zahhak/works" class="tag">Equius Zahhak</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jade%20Harley/works" class="tag">Jade Harley</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/BDSM/works" class="tag">BDSM</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Rape*q**q*/works" class="tag">Rape??</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/trigger%20warning/works" class="tag">trigger warning</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Even%20though%20theres%20not%20actually%20rape%20in%20this%20oops%20spoiler/works" class="tag">Even though theres not actually rape in this oops spoiler</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Also%20this%20is%20in%20shitty%20first%20person/works" class="tag">Also this is in shitty first person</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>I went there.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>382</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Kudos:</dt>
+    <dd><a href="/works/397677#comments">11</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>653</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_750363" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/750363">Tied</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/robogreaser/pseuds/robogreaser" class="login author" rel="author">robogreaser</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings"><span class="text">Choose Not To Use Archive Warnings</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-het category" title="F/M"><span class="text">F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime"> 6 Apr 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Horuss%20Zahhak*s*%20Damara%20Megido/works" class="tag">Horuss Zahhak/ Damara Megido</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Horuss%20Zahhak/works" class="tag">Horuss Zahhak</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Damara%20Megido/works" class="tag">Damara Megido</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Caliginous%20Romance%20%7C%20Kismesis/works" class="tag">Caliginous Romance | Kismesis</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bondage/works" class="tag">Bondage</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Whether or not Horuss and Damara were fighting over their flushed quadrants, they were quite content with each other in their black one.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>453</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/750363?show_comments=true#comments">1</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/750363#comments">10</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>381</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_367163" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/367163">Land of Clockwork and Grimdark Broads</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/kayliemalinza/pseuds/kayliemalinza" class="login author" rel="author">kayliemalinza</a>
+
+
+  
+        for <a href="/users/gogollescent/gifts">gogollescent</a>
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-teen rating" title="Teen And Up Audiences"><span class="text">Teen And Up Audiences</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Underage"><span class="text">Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-het category" title="F/M"><span class="text">F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">16 Nov 2011</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Rose%20Lalonde*s*Dave%20Strider/works" class="tag">Rose Lalonde/Dave Strider</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Bro%20*a*%20Dave%20Strider/works" class="tag">Bro &amp; Dave Strider</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Rose%20Lalonde/works" class="tag">Rose Lalonde</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Dave%20Strider/works" class="tag">Dave Strider</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Grimdark!Rose%20-%20Character/works" class="tag">Grimdark!Rose - Character</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Doomed%20Timelines/works" class="tag">Doomed Timelines</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Tentacles/works" class="tag">Tentacles</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Dubious%20Consent/works" class="tag">Dubious Consent</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bondage/works" class="tag">Bondage</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/POV%20Second%20Person/works" class="tag">POV Second Person</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Multiple%20Daves/works" class="tag">Multiple Daves</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Time%20Loop/works" class="tag">Time Loop</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>You sleep in shifts because that's supposed to be safe, and it is, until you wake up and Rose is leaning over you with her face a weird shade of gray and her eyes glowing and these little black fronds jutting out all over the place. Proto-tentacles, you guess. They're kind of cute.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>1,522</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/367163?show_comments=true#comments">4</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/367163#comments">61</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/367163/bookmarks">16</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>1237</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_964534" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/964534">Hallucinations</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/SeptemberSilver/pseuds/SeptemberSilver" class="login author" rel="author">SeptemberSilver</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-teen rating" title="Teen And Up Audiences"><span class="text">Teen And Up Audiences</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-choosenotto warnings" title="Choose Not To Use Archive Warnings"><span class="text">Choose Not To Use Archive Warnings</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-multi category" title="Gen, F/M"><span class="text">Gen, F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">12 Sep 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Choose%20Not%20To%20Use%20Archive%20Warnings/works" class="tag">Creator Chose Not To Use Archive Warnings</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Calliope*s*Caliborn/works" class="tag">Calliope/Caliborn</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/UndyingUmbrage*s*uranianUmbra/works" class="tag">UndyingUmbrage/uranianUmbra</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Lord%20English*s*Calliope/works" class="tag">Lord English/Calliope</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Caliborn/works" class="tag">Caliborn</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Calliope%20(Homestuck)/works" class="tag">Calliope (Homestuck)</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Andrew%20Hussie/works" class="tag">Andrew Hussie</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Lord%20English/works" class="tag">Lord English</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/I&#x27;m%20not%20even%20sure%20if%20this%20qualifies%20as%20Caliborn*s*Calliope/works" class="tag">I&#x27;m not even sure if this qualifies as Caliborn/Calliope</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/I&#x27;m%20not%20really%20sure%20what%20the%20hell%20this%20is/works" class="tag">I&#x27;m not really sure what the hell this is</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Romance/works" class="tag">Romance</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/A%20teeny%20tiny%20mention%20of%20rape%20that%20I&#x27;m%20sure%20none%20of%20you%20will%20get/works" class="tag">A teeny tiny mention of rape that I&#x27;m sure none of you will get</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/this%20is%20insane/works" class="tag">this is insane</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Sensory%20Deprivation/works" class="tag">Sensory Deprivation</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Angst/works" class="tag">Angst</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Maybe%20-%20Freeform/works" class="tag">Maybe - Freeform</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Caliborn%20being%20a%20crazed%20lunatic/works" class="tag">Caliborn being a crazed lunatic</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Lord English has succeeded. He has destroyed them all.</p><p>Too bad that wasn't really what he wanted.</p><p>Because now he's floating through space. Alone. Unable to die. And there's nothing that can save him.</p>
+    </blockquote>
+  	
+    <h6 class="landmark heading">Series</h6>
+    <ul class="series">
+        <li>
+          Part <strong>3</strong> of <a href="/series/53533">Calliope/Caliborn</a>
+        </li>
+    </ul>
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>1,605</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/964534?show_comments=true#comments">2</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/964534#comments">19</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/964534/bookmarks">1</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>535</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_1995609" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/1995609">Taste of your own medicine</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/allthehomostuck/pseuds/allthehomostuck" class="login author" rel="author">allthehomostuck</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Graphic Depictions Of Violence, Major Character Death, Rape/Non-Con, Underage"><span class="text">Graphic Depictions Of Violence, Major Character Death, Rape/Non-Con, Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-multi category" title="F/F, F/M, M/M, Multi"><span class="text">F/F, F/M, M/M, Multi</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-no iswip" title="Work in Progress"><span class="text">Work in Progress</span></span></a></li>
+</ul>
+    <p class="datetime">21 Jul 2014</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Graphic%20Depictions%20Of%20Violence/works" class="tag">Graphic Depictions Of Violence</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Major%20Character%20Death/works" class="tag">Major Character Death</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Rape*s*Non-Con/works" class="tag">Rape/Non-Con</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Bro*s*John%20Egbert*s*Jake%20English*s*Dave%20Strider/works" class="tag">Bro/John Egbert/Jake English/Dave Strider</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Bro*s*John%20Egbert/works" class="tag">Bro/John Egbert</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/John%20Egbert*s*Dave%20Strider/works" class="tag">John Egbert/Dave Strider</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/Jake%20English*s*Dirk%20Strider/works" class="tag">Jake English/Dirk Strider</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/John%20Egbert*s*Dirk%20Strider/works" class="tag">John Egbert/Dirk Strider</a></li> <li class='relationships'><a href="http://archiveofourown.org/tags/John%20Egbert*s*Jake%20English/works" class="tag">John Egbert/Jake English</a></li><li class='characters'><a href="http://archiveofourown.org/tags/John%20Egbert/works" class="tag">John Egbert</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jake%20English/works" class="tag">Jake English</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Dirk%20Strider/works" class="tag">Dirk Strider</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Bro%20(Homestuck)/works" class="tag">Bro (Homestuck)</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Dave%20Strider/works" class="tag">Dave Strider</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Rose%20Lalonde/works" class="tag">Rose Lalonde</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Roxy%20Lalonde/works" class="tag">Roxy Lalonde</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jane%20Crocker/works" class="tag">Jane Crocker</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/a%20lot%20more%20that%20i%20will%20add%20later/works" class="tag">a lot more that i will add later</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Slavery/works" class="tag">Slavery</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Rape/works" class="tag">Rape</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bondage/works" class="tag">Bondage</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Anal%20Sex/works" class="tag">Anal Sex</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Oral%20Sex/works" class="tag">Oral Sex</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Alternate%20Universe%20-%20No%20Sburb%20Session/works" class="tag">Alternate Universe - No Sburb Session</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>You laid on the bed and looked around. Blood. Blood everywhere. Splattered on the wall and floor and bed. If only this one had listened. Jake had told this stupid slave one thing. Of coarse it was a stubborn little shit which meant torture it. Well even after torture it still was a stubborn little shit which made Jake mad which meant you got to kill him. Since he was your pick. You, John Egbert, and Jake English were slave trainers. Well you guys got the slave to behave before selling it. Unless your selling to someone who wants a reason to abuse there slaves.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>2,430</dd>
+    <dt>Chapters:</dt>
+    <dd>4/?</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/1995609?show_comments=true&amp;view_full_work=true#comments">7</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/1995609?view_full_work=true#comments">22</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/1995609/bookmarks">2</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>690</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_847057" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/847057">Warm Blooded Women</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/MistCover/pseuds/MistCover" class="login author" rel="author">MistCover</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-teen rating" title="Teen And Up Audiences"><span class="text">Teen And Up Audiences</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-no warnings" title="No Archive Warnings Apply"><span class="text">No Archive Warnings Apply</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-femslash category" title="F/F"><span class="text">F/F</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">17 Jun 2013</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/No%20Archive%20Warnings%20Apply/works" class="tag">No Archive Warnings Apply</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Rose%20Lalonde*s*Kanaya%20Maryam/works" class="tag">Rose Lalonde/Kanaya Maryam</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Rose%20Lalonde/works" class="tag">Rose Lalonde</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Kanaya%20Maryam/works" class="tag">Kanaya Maryam</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/hungry%20rainbow%20drinkers/works" class="tag">hungry rainbow drinkers</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Blood%20Drinking/works" class="tag">Blood Drinking</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/blooddrinking/works" class="tag">blooddrinking</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Blood/works" class="tag">Blood</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Pre%20Relationship/works" class="tag">Pre Relationship</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Rainbow%20Drinkers/works" class="tag">Rainbow Drinkers</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/basically%20just%20blood%20drinking/works" class="tag">basically just blood drinking</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/im%20dead%20serious/works" class="tag">im dead serious</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/thats%20all%20this%20is/works" class="tag">thats all this is</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bloodplay/works" class="tag">Bloodplay</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Hungry Rainbow Drinkers make poor conversationalists. A certain Seer aims to help.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>1,328</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/847057?show_comments=true#comments">3</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/847057#comments">48</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/847057/bookmarks">4</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>783</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_570963" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/570963">untitled number one</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/lash/pseuds/lash" class="login author" rel="author">lash</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-explicit rating" title="Explicit"><span class="text">Explicit</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Underage"><span class="text">Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-slash category" title="M/M"><span class="text">M/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">23 Nov 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Bro*s*Dave%20Strider/works" class="tag">Bro/Dave Strider</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Bro%20(Homestuck)/works" class="tag">Bro (Homestuck)</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Dave%20Strider/works" class="tag">Dave Strider</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/BDSM/works" class="tag">BDSM</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/sub!bro/works" class="tag">sub!bro</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Dom!Dave/works" class="tag">Dom!Dave</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/uh/works" class="tag">uh</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bondage/works" class="tag">Bondage</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Begging/works" class="tag">Begging</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/and%20a%20vibrator/works" class="tag">and a vibrator</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>bro asks dave to make him his bitch.  dave is more than happy to comply.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>2,066</dd>
+    <dt>Chapters:</dt>
+    <dd>1/1</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/570963?show_comments=true#comments">2</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/570963#comments">99</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/570963/bookmarks">9</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>2512</dd>
+
+  </dl>
+
+
+</li>
+
+        <li class="work blurb group" id="work_376195" role="article">
+  
+
+  <!--title, author, fandom-->
+  <div class="header module">
+
+    <h4 class="heading">
+      <a href="/works/376195">Turning Tricks</a>
+      by
+        
+      <!-- do not cache -->
+      <a href="http://archiveofourown.org/users/Rednaelo/pseuds/Querel" class="login author" rel="author">Querel (Rednaelo)</a>
+
+
+  
+      
+      
+    </h4>
+
+    <h5 class="fandoms heading">
+      <span class="landmark">Fandoms:</span>
+      <a href="http://archiveofourown.org/tags/Homestuck/works" class="tag">Homestuck</a>
+      &nbsp;
+    </h5>
+
+    <!--required tags-->
+    <ul class="required-tags">
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="rating-mature rating" title="Mature"><span class="text">Mature</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="warning-yes warnings" title="Graphic Depictions Of Violence, Underage"><span class="text">Graphic Depictions Of Violence, Underage</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="category-het category" title="F/M"><span class="text">F/M</span></span></a></li>
+<li> <a href="/help/symbols-key.html" aria-controls="#modal" class="help symbol question modal" title="Symbols key"><span class="complete-yes iswip" title="Complete Work"><span class="text">Complete Work</span></span></a></li>
+</ul>
+    <p class="datetime">15 May 2012</p>
+  </div>
+	  
+  <!--warnings again, cast, freeform tags-->
+  <h6 class="landmark heading">Tags</h6>
+  <ul class="tags commas">
+    <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Graphic%20Depictions%20Of%20Violence/works" class="tag">Graphic Depictions Of Violence</a></strong></li> <li class='warnings'><strong><a href="http://archiveofourown.org/tags/Underage/works" class="tag">Underage</a></strong></li><li class='relationships'><a href="http://archiveofourown.org/tags/Trickster!John*s*Jade%20Harley/works" class="tag">Trickster!John/Jade Harley</a></li><li class='characters'><a href="http://archiveofourown.org/tags/Trickster!John/works" class="tag">Trickster!John</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Davesprite/works" class="tag">Davesprite</a></li> <li class='characters'><a href="http://archiveofourown.org/tags/Jade%20Harley/works" class="tag">Jade Harley</a></li><li class='freeforms'><a href="http://archiveofourown.org/tags/Horror/works" class="tag">Horror</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Guro/works" class="tag">Guro</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Vore/works" class="tag">Vore</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Emetophilia/works" class="tag">Emetophilia</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Bloodplay/works" class="tag">Bloodplay</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Knifeplay/works" class="tag">Knifeplay</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Gore/works" class="tag">Gore</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Querel%20is%20a%20sick%20bastard/works" class="tag">Querel is a sick bastard</a></li> <li class='freeforms'><a href="http://archiveofourown.org/tags/Abandoned%20Work%20-%20Unfinished%20and%20Discontinued/works" class="tag">Abandoned Work - Unfinished and Discontinued</a></li>
+  </ul>
+
+  <!--summary-->	
+    <h6 class="landmark heading">Summary</h6>
+    <blockquote class="userstuff summary">
+      <p>Discontinued.  John comes down with a strange affliction that seems innocent enough at first, despite how odd it is.  However, his sudden transformation begins stringing a series of disturbing happenings together as his friends come to realize just how dangerous he has become.</p>
+    </blockquote>
+  	
+
+  <!--stats-->
+
+  <dl class="stats">
+      <dt>Language:</dt>
+      <dd>English</dd>
+    <dt>Words:</dt>
+    <dd>9,975</dd>
+    <dt>Chapters:</dt>
+    <dd>6/6</dd>
+
+
+
+    <dt>Comments:</dt>
+    <dd><a href="/works/376195?show_comments=true&amp;view_full_work=true#comments">40</a></dd>
+    <dt>Kudos:</dt>
+    <dd><a href="/works/376195?view_full_work=true#comments">61</a></dd>
+    <dt>Bookmarks:</dt>
+    <dd><a href="/works/376195/bookmarks">8</a></dd>
+
+    <dt>Hits:</dt>
+    <dd>2797</dd>
+
+  </dl>
+
+
+</li>
+
+  </ol>
+ 
+ <h4 class="landmark heading">Pages Navigation</h4><ol class="pagination actions" role="navigation" title="pagination"><li class="previous" title="previous"><span class="disabled">&#8592; Previous</span></li> <li><span class="current">1</span></li> <li><a rel="next" href="/works/search?commit=Search&amp;page=2&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">2</a></li> <li><a href="/works/search?commit=Search&amp;page=3&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">3</a></li> <li><a href="/works/search?commit=Search&amp;page=4&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">4</a></li> <li><a href="/works/search?commit=Search&amp;page=5&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">5</a></li> <li><a href="/works/search?commit=Search&amp;page=6&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">6</a></li> <li><a href="/works/search?commit=Search&amp;page=7&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">7</a></li> <li><a href="/works/search?commit=Search&amp;page=8&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">8</a></li> <li><a href="/works/search?commit=Search&amp;page=9&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">9</a></li> <li class="gap">…</li> <li><a href="/works/search?commit=Search&amp;page=67&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">67</a></li> <li><a href="/works/search?commit=Search&amp;page=68&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">68</a></li> <li class="next" title="next"><a rel="next" href="/works/search?commit=Search&amp;page=2&amp;utf8=%E2%9C%93&amp;work_search%5Bbookmarks_count%5D=&amp;work_search%5Bcharacter_names%5D=&amp;work_search%5Bcomments_count%5D=&amp;work_search%5Bcomplete%5D=0&amp;work_search%5Bcreator%5D=&amp;work_search%5Bfandom_names%5D=Homestuck&amp;work_search%5Bfreeform_names%5D=BDSM&amp;work_search%5Bhits%5D=&amp;work_search%5Bkudos_count%5D=&amp;work_search%5Blanguage_id%5D=&amp;work_search%5Bquery%5D=&amp;work_search%5Brating_ids%5D=&amp;work_search%5Brelationship_names%5D=&amp;work_search%5Brevised_at%5D=&amp;work_search%5Bshow_restricted%5D=false&amp;work_search%5Bsingle_chapter%5D=0&amp;work_search%5Bsort_column%5D=&amp;work_search%5Bsort_direction%5D=&amp;work_search%5Btitle%5D=&amp;work_search%5Bword_count%5D=">Next &#8594;</a></li></ol>
+<!--/content-->
+
+          <div class="clear"><!--presentational--></div>
+        </div>
+        <!-- END main -->
+      </div>
+      <!-- BEGIN footer -->
+<div id="footer" role="contentinfo" class="region">
+	<h3 class="landmark heading">Footer</h3>
+  <ul class="navigation actions" role="navigation">
+    <li class="module group">
+      <h4 class="heading">About the Archive</h4>
+      <ul class="menu">
+        <li><a href="/site_map">Site Map</a></li>
+        <li><a href="/diversity">Diversity Statement</a></li>
+        <li><a href="/tos">Terms of Service</a></li>
+        <li><a href="/dmca">DMCA Policy</a> </li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Contact Us</h4>
+      <ul class="menu">
+        <li><a href="/abuse_reports/new">Report Abuse</a></li>
+        <li><a href="/support">Technical Support and Feedback</a></li>
+      </ul>
+    </li>
+    <li class="module group">
+      <h4 class="heading">Development</h4>
+      <ul class="menu">
+          <li><a href="https://github.com/otwcode/otwarchive/commits/v0.9.61.2">otwarchive v0.9.61.2</a></li>
+        <li><a href="/known_issues">Known Issues</a></li>
+        <li><a href="http://www.gnu.org/licenses/gpl-2.0.html" title="View License">GPL</a> by the <a href="http://transformativeworks.org/" title="The Organization for Transformative Works">OTW</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<!-- END footer -->
+
+    </div>
+    <!-- check to see if this controller/action allow tinymce before we load the gigantor js; see application_helper -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js" type="text/javascript"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js" type="text/javascript"></script>
+<!-- if user has googleapis blocked for some reason we need a fallback -->
+<script type="text/javascript">if(typeof jQuery=='undefined'){document.write(unescape("%3Cscript src='/javascripts/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));document.write(unescape("%3Cscript src='/javascripts/jquery-ui.min.js' type='text/javascript'%3E%3C/script%3E"));}</script>
+
+<script type="text/javascript">$j=jQuery.noConflict();</script>
+<script src="/javascripts/jquery.scrollTo.min.js,q1431362117+jquery.livequery.min.js,q1431362117+rails.js,q1431362117+application.js,q1431362117+bootstrap,_bootstrap-dropdown.min.js,q1431362117+jquery-shuffle.js,q1431362117+jquery.tokeninput.min.js,q1431362117+jquery.trap.min.js,q1431362117+ao3modal.min.js,q1431362117+jquery.cookie.js,q1431362117+filters.min.js,q1431362117.pagespeed.jc.Z4mFDWpOGS.js"></script><script>eval(mod_pagespeed_6T_dBJ02L$);</script>
+<script>eval(mod_pagespeed_jJ23PWrYCv);</script>
+<script>eval(mod_pagespeed_rNaL6Jl2yk);</script>
+<script>eval(mod_pagespeed_rKqeynDnDs);</script>
+<script>eval(mod_pagespeed_RffzMn9jJS);</script>
+<script>eval(mod_pagespeed_QxaYfeXPP3);</script>
+<script>eval(mod_pagespeed_ClscoxZQBO);</script>
+<script>eval(mod_pagespeed_AzUjmmbssI);</script>
+<script>eval(mod_pagespeed_s$_tO7I8lF);</script>
+<script>eval(mod_pagespeed_sYBQrueFw5);</script>
+<script>eval(mod_pagespeed_cn9Xng6pip);</script>
+
+
+
+
+  </body>
+</html>

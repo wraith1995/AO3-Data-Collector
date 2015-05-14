@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <curl/curl.h>
+#define BUFSIZE (256 * 10240)
+
+
+
+int main(int argc, char **arvg)
+{
+	char *url = "http://archiveofourown.org/works/search?utf8=%E2%9C%93&work_search[query]=&work_search[title]=&work_search[creator]=&work_search[revised_at]=&work_search[complete]=0&work_search[single_chapter]=0&work_search[word_count]=&work_search[language_id]=&work_search[fandom_names]=Homestuck&work_search[rating_ids]=&work_search[character_names]=&work_search[relationship_names]=&work_search[freeform_names]=BDSM&work_search[hits]=&work_search[kudos_count]=&work_search[comments_count]=&work_search[bookmarks_count]=&work_search[sort_column]=&work_search[sort_direction]=&commit=Search";
+	CURL *conn;
+	CURLcode result;
+	//char buf[BUFSIZE]; //this is where we will keep the page
+	//we will only keep one page at a time.
+	FILE *fp;
+	fp = fopen("random", "w");
+	conn = curl_easy_init(); //initialize curl;
+	if(conn == NULL)
+	{
+
+		fprintf(stderr, "Failed to connect to the website");
+		exit(-1);
+	}
+	
+	result = curl_easy_setopt(conn, CURLOPT_URL, url);
+	if(result != CURLE_OK)
+	{
+		fprintf(stderr, "Error setting url");
+		exit(-1);
+	}
+
+	result = curl_easy_setopt(conn, CURLOPT_FOLLOWLOCATION, 1L);
+	if(result != CURLE_OK)
+	{
+		fprintf(stderr, "Error setting redirect");
+		exit(-1);
+	}
+	
+	
+	result = curl_easy_setopt(conn, CURLOPT_WRITEDATA, fp);
+	if(result != CURLE_OK)
+	{
+		fprintf(stderr, "Error setting to write file");
+		exit(-1);
+	}
+	
+	
+	result = curl_easy_perform(conn);
+	curl_easy_cleanup(conn);
+	fclose(fp);
+	
+
+
+
+
+	
+}
